@@ -11,6 +11,8 @@ RUN npm install
 
 COPY . .
 
+ENV REACT_APP_BACKEND_URL=http://192.168.0.32:8080
+
 RUN npm run build
 
 RUN npm install -g serve
