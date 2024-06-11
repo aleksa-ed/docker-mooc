@@ -1,0 +1,18 @@
+version: '3.8'
+
+services: 
+  front:
+    build: ../ex-2.03/front/
+    ports:
+      - 5000:5000
+
+  back:
+    build: ../ex-2.03/back/
+    environment:
+      - REDIS_HOST=redis
+    ports:
+      - 8080:8080
+
+  redis:
+    image: redis
+    
